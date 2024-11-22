@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+    <link rel="stylesheet" href="{% static 'library/styles.css' %}">
+</head>
+<body>
+<header>
+    <h1>Library</h1>
+</header>
+<div class="container">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    <p>Published on: {{ book.published_date }}</p>
+    <a href="{% url 'book_edit' pk=book.pk %}">Edit</a> | <a href="{% url 'book_delete' pk=book.pk %}">Delete</a>
+    <br>
+    <a href="{% url 'book_list' %}">Back to list</a>
+</div>
+</body>
+</html>

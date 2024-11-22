@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container confirmation">
+        <h2>Are you sure you want to delete "{{ book.title }}"?</h2>
+        <form method="post">
+            <button type="submit">Yes, delete</button>
+        </form>
+        <a href="{{ url_for('book_list') }}">Cancel</a>
+    </div>
+{% endblock %}

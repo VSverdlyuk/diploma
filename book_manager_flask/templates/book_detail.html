@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ book.title }}</h2>
+        <p>Author: {{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        <p>Published on: {{ book.published_date }}</p>
+        <a href="{{ url_for('book_edit', id=book.id) }}">Edit</a> | 
+        <a href="{{ url_for('book_delete', id=book.id) }}">Delete</a>
+        <br>
+        <a href="{{ url_for('book_list') }}">Back to list</a>
+    </div>
+{% endblock %}

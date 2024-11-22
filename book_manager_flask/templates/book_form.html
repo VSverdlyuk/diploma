@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ 'Create' if not book else 'Edit' }} Book</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="{{ form.title.data }}" required>
+
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" value="{{ form.author.data }}" required>
+
+            <label for="description">Description</label>
+            <textarea name="description" id="description">{{ form.description.data }}</textarea>
+
+            <label for="published_date">Published Date</label>
+            <input type="date" name="published_date" id="published_date" value="{{ form.published_date.data }}" required>
+
+            <button type="submit">Save</button>
+        </form>
+        <br>
+        <a href="{{ url_for('book_list') }}">Back to list</a>
+    </div>
+{% endblock %}

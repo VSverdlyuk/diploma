@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Library</h1>
+    <a href="/book/new">Add new book</a>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="/book/{{ book.id }}">{{ book.title }}</a> 
+                - <a href="/book/{{ book.id }}/edit">Edit</a> 
+                - <a href="/book/{{ book.id }}/delete">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
