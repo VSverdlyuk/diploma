@@ -3,6 +3,7 @@ from django import forms
 from .models import Book
 from django.forms import DateInput
 
+
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
